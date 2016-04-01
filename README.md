@@ -25,17 +25,16 @@ java -jar trusty.jar node --port 42000 > node.log 2>&1 &
 java -jar trusty.jar client --port 42000
 
 > Connecting client to node on 127.0.0.1:42000... connected
+
 $ connect 203.0.113.1
 > No node key pair found.
 > Should I generate a new one for this node? [Y/n]
 Y
-
 > Generating node.key .........................
 > Signing with your master key from ~/.config/trusty/
 > Connecting node to node on 203.0.113.1:42000... 
 > 203.0.113.1:42000 authenticated with a key from known user "Bob". Continue? [Y/n]
 Y
-
 > Connection Established. Receiving subnet information...
 > Received 12 potential nodes. Checking availability...
 > Bidirectionally available nodes: 2
@@ -44,7 +43,7 @@ Y
 > Checking availability of other nodes............
 > 5 nodes indirectly available
 > Network established.
-$ exit
 
+$ exit
 > Exiting trusty client. The node keeps running. Bye!
 ```
