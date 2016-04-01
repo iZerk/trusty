@@ -1,5 +1,9 @@
 language: java
 
+cache:
+  directories:
+  - lib
+
 before_install: ant init-ivy
 install: ant resolve
 
