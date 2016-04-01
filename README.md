@@ -1,5 +1,7 @@
 # trusty
 
+[![Build Status](https://travis-ci.org/iZerk/trusty.svg?branch=master)](https://travis-ci.org/iZerk/trusty)
+
 Trusty is an easy to set up, transitive trust based distributed network.
 It is meant to connect a group of computers (nodes) where each pair of nodes must not be connected bidirectionally and some nodes not even unidirectionally connected. Additionally, it should be tolerant about vanishing nodes.
 Every nodes needs to authenticate itself to at least one other member that trusts him.
