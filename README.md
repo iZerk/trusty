@@ -93,3 +93,10 @@ The protocol optionally supports to define an explicit route between the sender 
 ### Routing
 
 // TODO
+
+## Dicision making
+
+Trusty supports an abstract layer of voting.
+It ensures, that every available node receives the broadcasted message about the vote, allows to define the type of answer (yes / no or an item from a fixed list), allows a client to abstain from voting. It also keeps track of unreachable nodes for the voting process, tracks time of the defined timelimit and tries to verify the decision even of the network is partitioned and not all nodes can be reached.
+
+Hovever, it does not care about the vote itself. It provides an interface for other application to register for votes / types of votes and allows them to define the answer that it forwards. The evaluation, what should be voted on an how the decision is made is left to other applications on top of trusty as a networking layer.
