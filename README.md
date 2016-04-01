@@ -46,3 +46,4 @@ java -jar trusty.jar client --port 42000
   $ exit
   > Exiting trusty client. The node keeps running. Bye!
 ```
+(This assumes that the master key at ~/.config/trusty/ has already been generated and it's public key has been exchanged with "Bob"s public master key).
