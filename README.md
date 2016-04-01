@@ -57,9 +57,11 @@ java -jar trusty.jar client --port 42000
 // TODO define protocol in PROTOCOL.md
 
 Given the following scenario:
+```
 +-+          +-+        +-+
 |A| +------> |B| <----> |C|
 +-+          +-+        +-+
+```
 
 A can establish a connection to the publicly available B but B cannot directly connect to A (e.g. because its behind a firewall).
 C can connect to B and vice versa but C can't connect to A at all and A can't connect to C (e.g. because B is the gateway to C's network).
