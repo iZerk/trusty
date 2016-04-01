@@ -30,7 +30,7 @@ java -jar trusty.jar client --port 42000
   > Should I generate a new one for this node? [Y/n]
   Y
   > Generating node.key .........................
-  > Signing with your master key from ~/.config/trusty/
+  > Signing with your master key from ~/.config/trusty/ ("Alice")
   > Connecting node to node on 203.0.113.1:42000... 
   > 203.0.113.1:42000 authenticated with a key from known user "Bob". Continue? [Y/n]
   Y
