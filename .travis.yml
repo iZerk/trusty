@@ -6,6 +6,7 @@ cache:
 
 before_install: ant init-ivy
 install: ant resolve
+after_install: ls
 
 jdk:
   - oraclejdk8
