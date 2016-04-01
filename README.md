@@ -47,3 +47,47 @@ java -jar trusty.jar client --port 42000
   > Exiting trusty client. The node keeps running. Bye!
 ```
 (This assumes that the master key at ~/.config/trusty/ has already been generated and it's public key has been exchanged with "Bob"s public master key).
+
+## Encryption
+
+//TODO
+
+## Networking
+
+// TODO define protocol in PROTOCOL.md
+
+Given the following scenario:
++-+          +-+        +-+
+|A| +------> |B| <----> |C|
++-+          +-+        +-+
+
+A can establish a connection to the publicly available B but B cannot directly connect to A (e.g. because its behind a firewall).
+C can connect to B and vice versa but C can't connect to A at all and A can't connect to C (e.g. because B is the gateway to C's network).
+With trusty, A can communicate with C because B forwards the messages and because every Node knows every other nodes public key, B can't decrypt the message from A to C (but he knows that they communicate).
+Because the connection between A and B is kept open and serves as a bidirect channel, messages from C to A can be forwarded by B through the bidirectional channel that uses the unidirectional connection.
+
+// TODO how to establish / agree on the MST
+
+### Alternative routes
+
+If an inner node of the MST goes offline, an alternative route has to be established (and found in order to do so). To find routes, DSR is used to find new, fast connections.
+
+### QoS
+
+#### Speed
+
+For small informational packages, speed is most important.
+DSR ensures that at least at one point in time, the fastest connections were known and those are used by the MST.
+Even though, a direct connection between sender and receiver (if possible) might be faster than routing over the MST, the MST is known to connect all nodes so the message (normally) doesn't have to be re-sent and no new connection needs to be established because all connections of the MST are already opened, ready for data. 
+
+// TODO define if / when / how to re-establish QoS
+// TODO maybe DSR over the MST or a clique network might be suitable
+
+#### Bandwidth
+
+Currently, no bandwith optimization or guarantees are made.
+The protocol optionally supports to define an explicit route between the sender and the receiver in addition to the required receiver that should be used by best afford. This might be used to ensure a high bandwidth route. However, if the defined route is not possible, an alternative route will be chosen automatically.
+
+### Routing
+
+// TODO
